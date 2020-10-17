@@ -13,3 +13,12 @@ genre varchar
 primary key
     (id)
 );
+    create table ratings
+    (
+        id int
+        auto_increment not null,
+rating int
+        (10) null,
+primary key
+        (id)
+)
