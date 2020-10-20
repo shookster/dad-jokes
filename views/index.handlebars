@@ -6,16 +6,19 @@
         <div class="row">
             <div class="col-4 list-container">
                 <div class="card">
-                    <ul class="list-group"></ul>
+                    <ul class="list-group">
+                        {{#each jokes.name}}
+                        {{#/each}}
+                    </ul>
                 </div>
             </div>
             <div class="col-6">
                 <div class="card">
-                    <h4 id="joke" class="joke">this is where the jokes go</h4>
+                    <h4 id="joke" class="joke">{{this.name}}</h4>
                 </div>
                 <br>
                 <div class="card">
-                    <h4 id="punchline" class="punchline"></h4>
+                    <h4 id="punchline" class="punchline hide">{{this.punchline}}</h4>
                 </div>
                 <br>
                 <button type="button" id="punchlineBtn" class="btn btn-primary punchlineBtn">What's the
