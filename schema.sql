@@ -9,7 +9,9 @@ name varchar
 punchline varchar
     (250) null,
 genre varchar
-    (250) null,
+    (250) null,    
 primary key
     (id)
 );
+
+--Jokester table, use this to get the total number of jokes in a ranking--
