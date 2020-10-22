@@ -1,16 +1,43 @@
-// app.js
+require("dotenv").config();
+var apiRoutes= require("./routes/apiRoutes");
+var htmlRoutes = require("./routes/htmlRoutes");
+var express = require("express");
+var bodyParser = require("body-parser");
+var exphbs = require("express-handlebars");
 
-const http = require('http');
+var db = require("./models");
 
-// Create an instance of the http server to handle HTTP requests
-let app = http.createServer((req, res) => {
-    // Set a response type of plain text for the response
-    res.writeHead(200, {'Content-Type': 'text/plain'});
+var app = express();
+var PORT = process.env.PORT || 3000;
 
-    // Send back a response and end the connection
-    res.end('Hello World!\n');
-});
+// Middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(express.static("public"));
 
-// Start the server on port 3000
-app.listen(3000, '127.0.0.1');
-console.log('Node server running on port 3000');
+// Handlebars
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main"
+  })
+);
+app.set("view engine", "handlebars");
+
+// Routes
+app.use("/api", apiRoutes);
+app.use("/", htmlRoutes);
+
+var syncOptions = { force: false };
+
+// If running a test, set syncOptions.force to true
+// clearing the `testdb`
+if (process.env.NODE_ENV === "test") {
+  syncOptions.force = true;
+}
+
+db.sequelize.sync().then(function() {
+    app.listen(PORT, function() {
+      console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+    });
+  });

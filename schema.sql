@@ -19,7 +19,7 @@ primary key
     (
         id int
         auto_increment not NULL,
- user varchar
+ email varchar
         (250),
  password varchar
         (250),

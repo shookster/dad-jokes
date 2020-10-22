@@ -1,10 +1,21 @@
 module.exports = function (sequelize, DataTypes) {
-  var Joke = sequelize.define("Joke", {
-    title: DataTypes.STRING,
-    fulljoke: DataTypes.TEXT,
-    punchline: DataTypes.TEXT,
-    genre: DataTypes.STRING,
-    rating: DataTypes.DECIMAL
-  });
-  return Joke;
+  var Jokes = sequelize.define("Jokes", {
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    }, 
+    punchline:{
+     type: DataTypes.STRING,
+     allowNull: false,
+    },
+
+    genre: {
+      type:DataTypes.STRING,
+      allowNull: false,
+    },
+    rating:{
+      type: DataTypes.INTEGER,
+      allowNull: false,
+  }});
+  return Jokes;
 };
