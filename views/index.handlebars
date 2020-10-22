@@ -1,5 +1,5 @@
 <div id="home">
-    <nav class="navbar navbar-dark" style="background-color: #7AC3BC;">
+    <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="/">Dad Jokes!</a>
     </nav>
     <div class="container-fluid">
@@ -7,8 +7,8 @@
             <div class="col-4 list-container">
                 <div class="card">
                     <ul class="list-group">
-                        {{#each jokes.name}}
-                        {{#/each}}
+                        {{#each jokes}}
+                        {{/each}}
                     </ul>
                 </div>
             </div>
@@ -41,14 +41,14 @@
                                 <option value="5">Five Stars</option>
                             </select>
                             <div class="input-group-append">
-                                <button class="btn btn-outline-primary" type="ratingBtn">Submit</button>
+                                <button class="btn btn-outline-secondary" type="ratingBtn">Submit</button>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-12">
                         <h4>Think you can do better?</h4>
                     </div>
-                    <a type="button" id="submit" class="btn btn-primary submit" href="/submissionpage">Add a Joke!</a>
+                    <a type="button" id="submit" class="btn btn-primary submit" href="/submitjoke">Add a Joke!</a>
                 </div>
             </div>
 
