@@ -11,19 +11,19 @@ passport.use(new LocalStrategy(
   },
   function(email, password, done) {
     
-    db.User.findOne({
+    db.Jokesters.findOne({
       where: {
         email: email
       }
-    }).then(function(dbUser) {
+    }).then(function(dbJokesters) {
       
-      if (!dbUser) {
+      if (!dbJokesters) {
         return done(null, false, {
           message: "Incorrect email."
         });
       }
       
-      else if (!dbUser.validPassword(password)) {
+      else if (!dbJokesters.validPassword(password)) {
         return done(null, false, {
           message: "Incorrect password."
         });
@@ -34,11 +34,11 @@ passport.use(new LocalStrategy(
   }
 ));
 
-passport.serializeUser(function(user, cb) {
+passport.serializeJokester(function(user, cb) {
   cb(null, user);
 });
 
-passport.deserializeUser(function(obj, cb) {
+passport.deserializeJokester(function(obj, cb) {
   cb(null, obj);
 });
 
