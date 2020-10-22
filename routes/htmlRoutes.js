@@ -1,15 +1,18 @@
-const express = require("express")
+const { Router, response } = require("express");
+const express = require("express");
+const db = require("../models");
+var router = express.Router(); 
 
 
-const path = require("path")
-module.exports = function(app){
-    const app = express
+router.get("/", function(req,res){
+ res.render("index");
+ db.Jokes.findAll().then((jokes) => {
+    res.render("index", jokes);
+ });
+})
 
-    app.get("*", function(req,res){
-        res.sendFile(path.join(__dirname, "../public/index.html"))
-    })
+router.get("/submitjoke", function(req,res){
+  res.render("submitJoke");
+})
 
-    app.get("/submit", function(req,res){
-        res.sendFile(path.join(__dirname, "../public/submit-joke.html"))
-    })
-}
+    module.exports= router;
