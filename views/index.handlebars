@@ -1,25 +1,32 @@
 <div id="home">
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="/">Dad Jokes!</a>
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <a href="/signup"><button class="btn btn-dark my-2 my-sm-0" type="button">Signup</button></a>
+                <a href="/login"> <button class="btn btn-dark my-2 my-sm-0" type="button">Login</button></a>
+            </div>
+        </div>
+
     </nav>
     <div class="container-fluid">
         <div class="row">
             <div class="col-4 list-container">
                 <div class="card">
                     <ul class="list-group">
-                        <li><button>{{#each jokes.name, jokes.genre, jokes.rating}} {{/each}}</button></li>
+                        <li><button>{{#each jokes}} {{/each}}</button></li>
                     </ul>
                 </div>
             </div>
             <div class="col-6">
                 <div class="card">
-                    <h4 id="joke" class="joke">{{jokes.name}}</h4>
+                    <h4 id="joke" class="joke">{{this.name}}</h4>
                 </div>
                 <br>
                 <button type="button" id="punchlineBtn" class="btn btn-primary punchlineBtn">What's the
                     punchline?</button>
                 <div class="card hide">
-                    <h4 id="punchline" class="punchline">{{jokes.punchline}}</h4>
+                    <h4 id="punchline" class="punchline">{{this.punchline}}</h4>
                 </div>
                 <br>
                 <br>
@@ -52,4 +59,5 @@
             </div>
 
         </div>
+
     </div>
