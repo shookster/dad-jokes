@@ -2,11 +2,11 @@ const { Router, response } = require("express");
 const express = require("express");
 const db = require("../models");
 var router = express.Router(); 
+var isAuthenticated = require('../config/middleware/isAuthenticated')
 
 
 router.get("/", function (req, res) {
   console.log("routecheck for index")
-  // res.render("index");
   db.Jokes.findAll().then((jokes) => {
     res.render("index", {
       msg: "Jokes!",
@@ -26,5 +26,11 @@ router.get("/signup", function(req,res){
 router.get("/login", function(req,res){
   res.render("login");
 })
+router.get("/logout", function(req,res){
+  res.render("index")
+})
+// router.get("/login", isAuthenticated, function(req, res) {
+//   res.render("index");
+// });
 
     module.exports= router;

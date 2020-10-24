@@ -28,17 +28,19 @@ passport.use(new LocalStrategy(
           message: "Incorrect password."
         });
       }
-    
-      return done(null, dbUser);
+      console.log(dbJokesters)
+      return done(null, dbJokesters);
+    }).catch(function(err){
+      console.log(err)
     });
   }
 ));
 
-passport.serializeJokester(function(user, cb) {
+passport.serializeUser(function(user, cb) {
   cb(null, user);
 });
 
-passport.deserializeJokester(function(obj, cb) {
+passport.deserializeUser(function(obj, cb) {
   cb(null, obj);
 });
 

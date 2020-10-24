@@ -7,7 +7,6 @@
                 <a href="/login"> <button class="btn btn-dark my-2 my-sm-0" type="button">Login</button></a>
             </div>
         </div>
-
     </nav>
     <div class="container-fluid">
         <div class="row">
@@ -15,33 +14,29 @@
                 <div class="card">
                     <ul class="list-group">
                         {{#each jokes}}
-                        <li class="li-jokes">
-                            <button class="joke-item" type="button" id="joke-item"><b>Joke: </b>{{this.dataValues.name}}
-                                <br>
-                                <b>Genre: </b>{{this.dataValues.genre}}</button> <br>
-                        </li>
+                        <button class="joke-item" type="button" data-jokeid="{{this.dataValues.id}}"
+                            data-jokename="{{this.dataValues.name}}" data-jokepunchline="{{this.dataValues.punchline}}">
+                            <b>Joke: </b>{{this.dataValues.name}}
+                            <br>
+                            <b>Genre: </b>{{this.dataValues.genre}}</button> <br>
                         {{/each}}
-
                     </ul>
                 </div>
             </div>
             <div class="col-6">
                 <div class="card">
-                    <h4 id="joke" class="joke">{{this.name}}</h4>
+                    <span id="joke" class="joke">
+                    </span>
+                    <br>
+                    <span style="display: none;" id="punchline" class="punchline">
+                    </span>
+                    <button type="button" id="punchlineBtn" class="btn btn-primary punchlineBtn">What's the
+                        punchline?</button>
                 </div>
-                <br>
-                <button type="button" id="punchlineBtn" class="btn btn-primary punchlineBtn">What's the
-                    punchline?</button>
-                <div class="card hide">
-                    <h4 id="punchline" class="punchline">{{this.punchline}}</h4>
-                </div>
-                <br>
-                <br>
                 <div class="row">
                     <div class="col-sm">
                         <div id="current-ratings" class="card current-ratings">Ratings box</div>
                     </div>
-
                     <div class="col-sm">
                         <div class="input-group">
                             <select class="custom-select" id="your-rating"
@@ -64,7 +59,5 @@
                     <a type="button" id="submit" class="btn btn-primary submit" href="/submitjoke">Add a Joke!</a>
                 </div>
             </div>
-
         </div>
-
     </div>
