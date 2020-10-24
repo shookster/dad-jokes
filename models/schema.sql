@@ -9,7 +9,8 @@ name varchar
 punchline varchar
     (250) null,
 genre varchar
-    (250) null,    
+    (250) null, 
+rating int,   
 primary key
     (id)
 );
