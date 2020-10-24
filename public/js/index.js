@@ -19,7 +19,7 @@ $(function(){
     //         $punchline.val("Punchline");
     //     }
     // };
-    $("#joke-item").on("submit", function(event){
+    $("#joke-item").on("click", function(event){
         event.preventDefault();
         console.log("Testing")
     })

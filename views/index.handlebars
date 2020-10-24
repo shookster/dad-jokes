@@ -15,26 +15,23 @@
                 <div class="card">
                     <ul class="list-group">
                         {{#each jokes}}
-                        <li class="li-jokes">
-                            <button class="joke-item" type="button" id="joke-item"><b>Joke: </b>{{this.dataValues.name}}
-                                <br>
-                                <b>Genre: </b>{{this.dataValues.genre}}</button> <br>
-                        </li>
+                        <button class="joke-item" type="button" id="joke-item"><b>Joke: </b>{{this.dataValues.name}}
+                            <br>
+                            <b>Genre: </b>{{this.dataValues.genre}}</button> <br>
                         {{/each}}
-
                     </ul>
                 </div>
             </div>
             <div class="col-6">
+
                 <div class="card">
                     <h4 id="joke" class="joke">{{this.name}}</h4>
+                    <button type="button" id="punchlineBtn" class="btn btn-primary punchlineBtn">What's the
+                        punchline?</button>
+                    <h4 id="punchline" class="punchline hide">{{this.punchline}}</h4>
                 </div>
-                <br>
-                <button type="button" id="punchlineBtn" class="btn btn-primary punchlineBtn">What's the
-                    punchline?</button>
-                <div class="card hide">
-                    <h4 id="punchline" class="punchline">{{this.punchline}}</h4>
-                </div>
+
+
                 <br>
                 <br>
                 <div class="row">
