@@ -15,6 +15,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     }
+  },
+  {
+    
+    timestamps: false
   });
   Jokesters.prototype.validPassword = function(password) {
     return bcrypt.compareSync(password, this.password);
