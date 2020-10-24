@@ -4,11 +4,15 @@ const db = require("../models");
 var router = express.Router(); 
 
 
-router.get("/", function(req,res){
- res.render("index");
- db.Jokes.findAll().then((jokes) => {
-    res.render("index", jokes);
- });
+router.get("/", function (req, res) {
+  console.log("routecheck for index")
+  // res.render("index");
+  db.Jokes.findAll().then((jokes) => {
+    res.render("index", {
+      msg: "Jokes!",
+      jokes: jokes
+    });
+  }).catch((err) => console.log(err));
 })
 
 router.get("/submitjoke", function(req,res){

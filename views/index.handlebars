@@ -14,7 +14,13 @@
             <div class="col-4 list-container">
                 <div class="card">
                     <ul class="list-group">
-                        <li><button>{{#each jokes}} {{/each}}</button></li>
+                        {{#each jokes}}
+                        <li class="li-jokes">
+                            <button class="joke-item"><b>Joke: </b>{{this.dataValues.name}} <br>
+                                <b>Genre: </b>{{this.dataValues.genre}}</button> <br>
+                        </li>
+                        {{/each}}
+
                     </ul>
                 </div>
             </div>
@@ -61,3 +67,5 @@
         </div>
 
     </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="javascript" src="/js/index.js"></script>
