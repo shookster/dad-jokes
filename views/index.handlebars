@@ -14,10 +14,12 @@
                         <br>
                         <b>Genre: </b>{{this.dataValues.genre}}</button> <br>
                     {{/each}}
+
                 </ul>
             </div>
         </div>
         <div class="col">
+
             <div class="jumbotron">
                 <h3 id="joke" class="joke">
                 </h3>
@@ -29,10 +31,11 @@
                 </h3>
             </div>
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-8">
                     <div id="current-ratings" class="card current-ratings"></div>
-                    <div class="input-group">
-                        <select class="custom-select" id="your-rating" aria-label="Example select with button addon">
+                    <form id="your-rating">
+                        <select class="custom-select form-control" aria-label="Example select with button addon"
+                            id="choice">
                             <option selected>Rate this Joke!</option>
                             <option value="1">It's Alright</option>
                             <option value="2">Getting Better...</option>
@@ -40,18 +43,11 @@
                             <option value="4">Hahahaha</option>
                             <option value="5">I Actually Laughed!</option>
                         </select>
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-dark" type="ratingBtn">Submit</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm">
-                        <h4>Think you can do better?</h4>
-                        <a type="button" id="submit" class="btn btn-dark submit" href="/submitjoke">Add a Joke!</a>
-                    </div>
+                        <button class="btn btn-outline-dark ratingBtn" type="submit">Submit</button>
+                    </form>
+                    <h4>Think you can do better?</h4>
+                    <a type="button" class="btn btn-dark" href="/submitjoke">Add a Joke!</a>
                 </div>
             </div>
         </div>
     </div>
-</div>

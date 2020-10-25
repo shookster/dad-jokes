@@ -16,12 +16,12 @@ $(document).ready(() => {
          alert("nope");
          return;
      }
-     submitJoke(jokeData.joke, jokeData.punchline, jokeData.genre, jokeData.rating);
+     submitJoke(jokeData.joke, jokeData.punchline, jokeData.genre);
      jokeInput.val("");
      punchlineInput.val("");
      genreInput.val("");
  })
- function submitJoke(name, punchline, genre, rating) {
+ function submitJoke(name, punchline, genre) {
     $.post("/api/submitjoke", {
       name: name,
       punchline: punchline,
