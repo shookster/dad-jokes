@@ -4,8 +4,6 @@ $(document).ready(() => {
     const $jokeList = $(".list-container .list-group");
     const $jokeItem = $(".joke-item")
     const $punchlineBtn = $("#punchlineBtn")
-    // const $jokeItem = $(.joke-item)
-    // const activeJoke = {};
     console.log($jokeList)
     $jokeItem.on("click", function (event) {
         event.preventDefault()

@@ -16,10 +16,11 @@ router.get("/posts/", function(req, res) {
      name: req.body.name,
      punchline: req.body.punchline,
      genre: req.body.genre,
-     rating: req.body.rating
     })
-      .then(function(dbJokes) {
-        res.json(dbJokes);
+      .then(function() {
+        res.redirect("/home");
+      }).catch(function(err){
+        console.log(err)
       });
   });
 

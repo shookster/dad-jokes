@@ -6,42 +6,28 @@
   <div class="col">
     <div class="row justify-content-center">
       <div class="jumbotron">
-        <div class="container-fluid">
-          <h1 class="display-4">Think you can do better?</h1>
-          <p class="lead">Add a Joke!</p>
-          <form>
+        <h1 class="display-4">Think you can do better?</h1>
+        <p class="lead">Add a Joke!</p>
+        <form class="submit-joke-form">
+          <span>Setup</span>
+          <div class="row input-group">
+            <input type="text" class="col-sm-6" id="joke-info" placeholder="Whats the joke?">
+          </div>
+          <span>Punchline</span>
+          <div class="row">
+            <input type="text" class="col-sm-6" id="punchline" placeholder="Whats the punchline?">
+          </div>
+          <h5>And lastly... Whats the genre?<h5>
+              <span>Genre</span>
+              <div class="row">
+                <input type="text" class="col-sm-6" id="genre" placeholder="Whats the Genre?">
+              </div>
 
-            <div class="joke-info">
-              <input type="text" class="col-md-6" id="formGroupExampleInput" placeholder="Whats the joke?!">
-            </div>
-            <div class="joke-info">
-
-              <input type="text" class="col-md-6" id="formGroupExampleInput2" placeholder="Nice! Whats the punchline?!">
-            </div>
-            <div class="joke-info">
-              <div class="joke-info">
-                <!--basic text area which gives context to genre buttons, also an added line break-->
-                <h5>And lastly... Whats the genre?<h5> <br>
-                    <!--genre selection buttons-->
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                      <label class="btn btn-primary">
-                        <input type="radio" name="options" id="option1" autocomplete="off"> Good old fashioned dad joke!
-                      </label>
-                      <label class="btn btn-primary">
-                        <input type="radio" name="options" id="option2" autocomplete="off"> "What do you call..."
-                      </label>
-                      <label class="btn btn-primary">
-                        <input type="radio" name="options" id="option3" autocomplete="off"> Very punny!
-                      </label>
-                    </div>
-                    <!--submit comes after a line break for visuals-->
-                    <div class="btn-group-toggle" data-toggle="buttons"> <br>
-                      <label class="btn btn-primary">
-                        <input type="checkbox"> Submit your joke!
-                      </label>
-                    </div>
-          </form>
-        </div>
+              <button class="btn btn-primary" type="submit" id="submit">
+                Submit your joke!
+              </button>
       </div>
-
+      </form>
     </div>
+  </div>
+</div>
