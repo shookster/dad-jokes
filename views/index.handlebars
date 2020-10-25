@@ -1,7 +1,6 @@
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-light" style="background-color: rgb(184, 242, 184);">
     <a class="navbar-brand" href="/home">Dad Jokes!</a>
     <a class="navbar-brand" href="/">Logout</a>
-
 </nav>
 <div class="container-fluid">
     <div class="row">
@@ -23,11 +22,10 @@
                 <span id="joke" class="joke">
                 </span>
                 <br>
-                <button type="button" id="punchlineBtn" class="btn btn-primary punchlineBtn">What's the
+                <button type="button" id="punchlineBtn" class="btn btn-dark punchlineBtn">What's the
                     punchline?</button>
                 <span style="display: none;" id="punchline" class="punchline">
                 </span>
-
             </div>
             <div class="row">
                 <div class="col-sm">
@@ -37,21 +35,21 @@
                     <div class="input-group">
                         <select class="custom-select" id="your-rating" aria-label="Example select with button addon">
                             <option selected>Rate this Joke!</option>
-                            <option value="1">One Star</option>
-                            <option value="2">Two Stars</option>
-                            <option value="3">Three Stars</option>
-                            <option value="4">Four Stars</option>
-                            <option value="5">Five Stars</option>
+                            <option value="1">One- it's alright</option>
+                            <option value="2">Two- getting better...</option>
+                            <option value="3">Three- genuinely funny</option>
+                            <option value="4">Four- hahahaha</option>
+                            <option value="5">Five- I actually laughed!</option>
                         </select>
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="ratingBtn">Submit</button>
+                            <button class="btn btn-outline-dark" type="ratingBtn">Submit</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-12">
                     <h4>Think you can do better?</h4>
                 </div>
-                <a type="button" id="submit" class="btn btn-primary submit" href="/submitjoke">Add a Joke!</a>
+                <a type="button" id="submit" class="btn btn-dark submit" href="/submitjoke">Add a Joke!</a>
             </div>
         </div>
     </div>
