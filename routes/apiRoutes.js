@@ -26,9 +26,9 @@ router.get("/posts/", function(req, res) {
 
   router.post("/submitRating", function(req, res) {
     console.log(req.body);
-    db.Ratings.create({
+    db.Jokes.update({
       rating: req.body.rating,
-    }). then(function(){
+    }, {where: {rating: null}}). then(function(){
       res.redirect("/home");
     }).catch(function(err){
       console.log(err)
