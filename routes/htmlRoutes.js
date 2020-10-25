@@ -2,7 +2,7 @@ const { Router, response } = require("express");
 const express = require("express");
 const db = require("../models");
 var router = express.Router(); 
-var isAuthenticated = require('../config/middleware/isAuthenticated')
+
 
 
 router.get("/",  function (req, res) {
