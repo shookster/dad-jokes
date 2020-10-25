@@ -24,6 +24,17 @@ router.get("/posts/", function(req, res) {
       });
   });
 
+  router.post("/submitRating", function(req, res) {
+    console.log(req.body);
+    db.Ratings.create({
+      rating: req.body.rating,
+    }). then(function(){
+      res.redirect("/home");
+    }).catch(function(err){
+      console.log(err)
+    });
+  })
+
   router.post("/login", passport.authenticate("local"), function(req, res) {
     console.log(req.user)
     res.json(req.user);
