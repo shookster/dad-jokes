@@ -10,7 +10,8 @@ punchline varchar
     (250) null,
 genre varchar
     (250) null, 
-rating int,   
+rating varchar
+    (250),   
 primary key
     (id)
 );
