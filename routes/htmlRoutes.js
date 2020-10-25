@@ -5,8 +5,10 @@ var router = express.Router();
 var isAuthenticated = require('../config/middleware/isAuthenticated')
 
 
-router.get("/", function (req, res) {
-  console.log("routecheck for index")
+router.get("/",  function (req, res) {
+  res.render("entrypage")
+})
+router.get("/home", function (req, res){
   db.Jokes.findAll().then((jokes) => {
     res.render("index", {
       msg: "Jokes!",
@@ -14,7 +16,6 @@ router.get("/", function (req, res) {
     });
   }).catch((err) => console.log(err));
 })
-
 router.get("/submitjoke", function(req,res){
   res.render("submitJoke");
 })
@@ -25,12 +26,10 @@ router.get("/signup", function(req,res){
 
 router.get("/login", function(req,res){
   res.render("login");
+   if(req.user){
+     res.redirect("/home")
+   }
 })
-router.get("/logout", function(req,res){
-  res.render("index")
-})
-// router.get("/login", isAuthenticated, function(req, res) {
-//   res.render("index");
-// });
 
-    module.exports= router;
+
+module.exports= router;
