@@ -17,39 +17,41 @@
                 </ul>
             </div>
         </div>
-        <div class="col-6">
-            <div class="card">
-                <span id="joke" class="joke">
-                </span>
+        <div class="col">
+            <div class="jumbotron">
+                <h3 id="joke" class="joke">
+                </h3>
                 <br>
                 <button type="button" id="punchlineBtn" class="btn btn-dark punchlineBtn">What's the
                     punchline?</button>
-                <span style="display: none;" id="punchline" class="punchline">
-                </span>
+                <hr class="my-4">
+                <h3 style="display: none;" id="punchline" class="punchline">
+                </h3>
             </div>
             <div class="row">
-                <div class="col-sm">
-                    <div id="current-ratings" class="card current-ratings">Ratings box</div>
-                </div>
-                <div class="col-sm">
+                <div class="col-sm-6">
+                    <div id="current-ratings" class="card current-ratings"></div>
                     <div class="input-group">
                         <select class="custom-select" id="your-rating" aria-label="Example select with button addon">
                             <option selected>Rate this Joke!</option>
-                            <option value="1">One- it's alright</option>
-                            <option value="2">Two- getting better...</option>
-                            <option value="3">Three- genuinely funny</option>
-                            <option value="4">Four- hahahaha</option>
-                            <option value="5">Five- I actually laughed!</option>
+                            <option value="1">It's Alright</option>
+                            <option value="2">Getting Better...</option>
+                            <option value="3">Genuinely Funny</option>
+                            <option value="4">Hahahaha</option>
+                            <option value="5">I Actually Laughed!</option>
                         </select>
                         <div class="input-group-append">
                             <button class="btn btn-outline-dark" type="ratingBtn">Submit</button>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12">
-                    <h4>Think you can do better?</h4>
+                <div class="row">
+                    <div class="col-sm">
+                        <h4>Think you can do better?</h4>
+                        <a type="button" id="submit" class="btn btn-dark submit" href="/submitjoke">Add a Joke!</a>
+                    </div>
                 </div>
-                <a type="button" id="submit" class="btn btn-dark submit" href="/submitjoke">Add a Joke!</a>
             </div>
         </div>
     </div>
+</div>
