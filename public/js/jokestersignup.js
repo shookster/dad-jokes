@@ -27,14 +27,10 @@ $(document).ready(function() {
         email: email,
         password: password
       })
-        .then(function(data) {
+        .then(function() {
           window.location.replace("/login");
-        })
-        .catch(handleLoginErr);
-    }
-  
-    function handleLoginErr(err) {
-      $("#alert .msg").text(err.responseJSON);
-      $("#alert").fadeIn(500);
+        }).catch(function(err) {
+          console.log(err);
+        }); 
     }
   });

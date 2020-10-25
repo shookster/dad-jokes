@@ -1,63 +1,56 @@
-<div id="home">
-    <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Dad Jokes!</a>
-        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-            <div class="btn-group mr-2" role="group" aria-label="First group">
-                <a href="/signup"><button class="btn btn-dark my-2 my-sm-0" type="button">Signup</button></a>
-                <a href="/login"> <button class="btn btn-dark my-2 my-sm-0" type="button">Login</button></a>
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="/home">Dad Jokes!</a>
+    <a class="navbar-brand" href="/">Logout</a>
+
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4 list-container">
+            <div class="card">
+                <ul class="list-group">
+                    {{#each jokes}}
+                    <button class="joke-item" type="button" data-jokeid="{{this.dataValues.id}}"
+                        data-jokename="{{this.dataValues.name}}" data-jokepunchline="{{this.dataValues.punchline}}">
+                        <b>Joke: </b>{{this.dataValues.name}}
+                        <br>
+                        <b>Genre: </b>{{this.dataValues.genre}}</button> <br>
+                    {{/each}}
+                </ul>
             </div>
         </div>
-    </nav>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-4 list-container">
-                <div class="card">
-                    <ul class="list-group">
-                        {{#each jokes}}
-                        <button class="joke-item" type="button" data-jokeid="{{this.dataValues.id}}"
-                            data-jokename="{{this.dataValues.name}}" data-jokepunchline="{{this.dataValues.punchline}}">
-                            <b>Joke: </b>{{this.dataValues.name}}
-                            <br>
-                            <b>Genre: </b>{{this.dataValues.genre}}</button> <br>
-                        {{/each}}
-                    </ul>
-                </div>
+        <div class="col-6">
+            <div class="card">
+                <span id="joke" class="joke">
+                </span>
+                <br>
+                <span style="display: none;" id="punchline" class="punchline">
+                </span>
+                <button type="button" id="punchlineBtn" class="btn btn-primary punchlineBtn">What's the
+                    punchline?</button>
             </div>
-            <div class="col-6">
-                <div class="card">
-                    <span id="joke" class="joke">
-                    </span>
-                    <br>
-                    <span style="display: none;" id="punchline" class="punchline">
-                    </span>
-                    <button type="button" id="punchlineBtn" class="btn btn-primary punchlineBtn">What's the
-                        punchline?</button>
+            <div class="row">
+                <div class="col-sm">
+                    <div id="current-ratings" class="card current-ratings">Ratings box</div>
                 </div>
-                <div class="row">
-                    <div class="col-sm">
-                        <div id="current-ratings" class="card current-ratings">Ratings box</div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="input-group">
-                            <select class="custom-select" id="your-rating"
-                                aria-label="Example select with button addon">
-                                <option selected>Rate this Joke!</option>
-                                <option value="1">One Star</option>
-                                <option value="2">Two Stars</option>
-                                <option value="3">Three Stars</option>
-                                <option value="4">Four Stars</option>
-                                <option value="5">Five Stars</option>
-                            </select>
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="ratingBtn">Submit</button>
-                            </div>
+                <div class="col-sm">
+                    <div class="input-group">
+                        <select class="custom-select" id="your-rating" aria-label="Example select with button addon">
+                            <option selected>Rate this Joke!</option>
+                            <option value="1">One Star</option>
+                            <option value="2">Two Stars</option>
+                            <option value="3">Three Stars</option>
+                            <option value="4">Four Stars</option>
+                            <option value="5">Five Stars</option>
+                        </select>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="ratingBtn">Submit</button>
                         </div>
                     </div>
-                    <div class="col-sm-12">
-                        <h4>Think you can do better?</h4>
-                    </div>
-                    <a type="button" id="submit" class="btn btn-primary submit" href="/submitjoke">Add a Joke!</a>
                 </div>
+                <div class="col-sm-12">
+                    <h4>Think you can do better?</h4>
+                </div>
+                <a type="button" id="submit" class="btn btn-primary submit" href="/submitjoke">Add a Joke!</a>
             </div>
         </div>
     </div>
