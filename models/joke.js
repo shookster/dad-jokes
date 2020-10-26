@@ -14,9 +14,8 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
     },
     rating: {
-      type:DataTypes.STRING,
-      allowNull: true,
-    },
+      type: DataTypes.INTEGER,
+    }
     
 },
 {

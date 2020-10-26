@@ -9,12 +9,15 @@
                 <ul class="list-group">
                     {{#each jokes}}
                     <button class="joke-item" type="button" data-jokeid="{{this.dataValues.id}}"
-                        data-jokename="{{this.dataValues.name}}" data-jokepunchline="{{this.dataValues.punchline}}">
+                        data-jokename="{{this.dataValues.name}}" data-jokepunchline="{{this.dataValues.punchline}}"
+                        data-jokerating="{{this.dataValues.punchline}}">
                         <b>Joke: </b>{{this.dataValues.name}}
                         <br>
                         <b>Genre: </b>{{this.dataValues.genre}}
                         <br>
-                        <b>Rating: </b>{{this.dataValues.rating}}</button> <br>
+                        <b>Rating: </b>{{this.dataValues.rating}}
+                    </button>
+                    <br>
                     {{/each}}
 
                 </ul>
@@ -45,7 +48,7 @@
                             <option value="4">Hahahaha</option>
                             <option value="5">I Actually Laughed!</option>
                         </select>
-                        <button class="btn btn-outline-dark ratingBtn" type="submit">Submit</button>
+                        <button class="btn btn-dark ratingBtn" type="submit">Submit</button>
                     </form>
                     <h4>Think you can do better?</h4>
                     <a type="button" class="btn btn-dark" href="/submitjoke">Add a Joke!</a>
