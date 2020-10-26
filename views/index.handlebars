@@ -10,7 +10,7 @@
                     {{#each jokes}}
                     <button class="joke-item" type="button" data-jokeid="{{this.dataValues.id}}"
                         data-jokename="{{this.dataValues.name}}" data-jokepunchline="{{this.dataValues.punchline}}"
-                        data-jokerating="{{this.dataValues.punchline}}">
+                        data-jokerating="{{this.dataValues.rating}}">
                         <b>Joke: </b>{{this.dataValues.name}}
                         <br>
                         <b>Genre: </b>{{this.dataValues.genre}}
@@ -37,7 +37,9 @@
             </div>
             <div class="row">
                 <div class="col-sm-8">
-                    <div id="current-ratings" class="card current-ratings"></div>
+                    <div class="card current-ratings">
+                        <h4 id="current-ratings"></h4>
+                    </div>
                     <form id="your-rating">
                         <select class="custom-select form-control" aria-label="Example select with button addon"
                             id="choice">
