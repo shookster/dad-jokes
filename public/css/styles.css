@@ -60,6 +60,11 @@ body {
   padding: 20px;
   cursor: pointer;
 }
+.list-group {
+  width: auto;
+  height: 500px;
+  overflow: scroll;
+}
 .footer {
   position: fixed;
   left: 0;
