@@ -50,7 +50,8 @@
                             <option value="4">Hahahaha</option>
                             <option value="5">I Actually Laughed!</option>
                         </select>
-                        <button class="btn btn-dark ratingBtn" type="submit">Submit</button>
+                        <button class="btn btn-dark ratingBtn" id={{this.dataValues.id}} type="submit"
+                            data-jokeid="{{this.dataValues.id}}">Submit</button>
                     </form>
                     <h4>Think you can do better?</h4>
                     <a type="button" class="btn btn-dark" href="/submitjoke">Add a Joke!</a>

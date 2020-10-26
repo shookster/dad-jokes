@@ -4,6 +4,7 @@ const db = require("../models")
 const passport = require("../config/passport")        
 
 router.get("/posts/", function(req, res) {
+    console.log(res.body)  
     db.Jokes.findAll({})
       .then(function(dbJokes) {
         res.json(dbJokes);
@@ -25,11 +26,11 @@ router.get("/posts/", function(req, res) {
   });
 
   router.post("/submitRating", function(req, res) {
-    console.log(req.body);
+    console.log("testing",req.body);
     db.Jokes.update({
       rating: req.body.rating,
-    }, {where: {rating: null}}). then(function(){
-      res.redirect("/home");
+    }, {where: {id: req.body.id}}). then(function(){
+      res.json(200);
     }).catch(function(err){
       console.log(err)
     });
